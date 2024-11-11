@@ -39,13 +39,13 @@ function App() {
     passwordGenerator()
   }, [length, numberAllowed, charAllowed, passwordGenerator])
   return (
-      <div style={{backgroundColor:'pink'}}>
+      <div style={{backgroundColor:'black',alignItems:'center'}}>
     <div style= {{marginLeft:'40%', }}>
 
-      <h1 style={{marginLeft:'text-white text-center my-3', fontSize:'3rem',}}>Password Genertor</h1>
+      <h1 style={{marginLeft:'text-white text-center my-3', fontSize:'3rem', color:'orange'}}>Password Genertor</h1>
       <div style={{marginLeft:'flex shadow rounded-lg overflow-hidden mb-4'}}>
         
-        <input type="text" placeholder="Password" readOnly className="outline-none w-full py-1 px-3" value={password} ref={passwordRef}></input>
+        <input style={{color:'orange'}} type="text" placeholder="Password" readOnly className="outline-none w-full py-1 px-3" value={password} ref={passwordRef}></input>
       
         <button className= 'btn btn-primary' onClick={copyPaaswordToClipBoard}>Copy</button>
       </div>
@@ -53,7 +53,7 @@ function App() {
 
       <div className="flex text-sm gap-x-2">
         <div className="flex items-center gap-x-1">
-          <input type="range" min={6} max={100} className="cursor-pointer"
+        <input  type="range" min={6} max={100} className="cursor-pointer"
             value={length} onChange={(e) => { setLength(e.target.value) }} />
 
 
@@ -65,12 +65,12 @@ function App() {
 
         <div className="flex items-center gap-x-1">
           <input type="checkbox" id="numberInput" defaultChecked={numberAllowed} onChange={() => { setNumbetAllowed((prev) => !prev) }} />
-          <lable htmlFor="numberInput">Number</lable>
+          <lable style={{color:'orange'}} htmlFor="numberInput">Number</lable>
         </div>
         
         <div className="flex items-center gap-x-1">
           <input type="checkbox" id="characterInput" defaultChecked={charAllowed} onChange={() => { setCharAllowed((prev) => !prev) }} />
-          <label htmlFor="characterInput">Character</label>
+          <label style={{color:'orange'}} htmlFor="characterInput">Character</label>
         </div>
       </div>
     </div>
